@@ -1,0 +1,8 @@
+{
+  "name": "OhMyWow",
+  "app_id": "6ee46c1a",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
