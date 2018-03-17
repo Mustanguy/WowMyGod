@@ -12,9 +12,11 @@ export class HomePage {
     data: any;
 
     constructor(public navCtrl: NavController) {
-
     }
+
     logForm() {
         this.navCtrl.push(DashboardPage, {'data': this.credentials});
     }
+
+
 }

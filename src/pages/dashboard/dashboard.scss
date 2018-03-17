@@ -1,12 +1,11 @@
 page-dashboard {
 
 }
-.scroll-content {
-  overflow: hidden;
-}
 
 .navbar-logo {
   width: 30px;
+  margin: 0 auto;
+  display: block;
 }
 
 .dashboard-main {
@@ -41,9 +40,11 @@ page-dashboard {
 }
 
 .stat-container .stat {
-  font-size: 10px;
+  font-size: 9px !important;
 }
-
+.stat-container p {
+  font-size: 12px;
+}
 .green {
   color: green !important;
 }
@@ -54,4 +55,28 @@ page-dashboard {
 
 .orange {
   color: orange !important;
+}
+
+.back-btn {
+  color: #333232 !important;
+}
+
+.bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+  position: absolute;
+  z-index: 99999;
+}
+
+.img-item a {
+  cursor: pointer;
+
+  height: 35px;
+  width: 35px;
+}
+
+.popover-md .popover-content {
+  background: transparent !important;
+  width: inherit;
+  left: 71px !important;
+  top: 61px !important;
+  box-shadow: none;
 }

@@ -6,9 +6,8 @@
 -->
 <ion-header>
 
-    <ion-navbar hideBackButton="true">
+    <ion-navbar>
         <ion-title><img src="assets/imgs/logo2.png" class="navbar-logo" /></ion-title>
-        
     </ion-navbar>
 
 </ion-header>
@@ -20,30 +19,60 @@
             <div class="img-character"
                  [style.background-image]="'url(https://render-eu.worldofwarcraft.com/character/' + img + ')'">
                 <div class="img-item">
-                    <a (ng-click)="itemPage(character.item.head.id)">
+                    <a (click)="presentPopover($event, character.items.head.id)">
                         <img style="top:5px; left:5px" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.head.icon }}.jpg"/>
                     </a>
-                    <img style="top:50px; left:5px" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.neck.icon }}.jpg"/>
-                    <img style="top:95px; left:5px" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.shoulder.icon }}.jpg"/>
-                    <img style="top:140px; left:5px" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.back.icon }}.jpg"/>
-                    <img style="top:185px; left:5px" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.chest.icon }}.jpg"/>
+                    <a (click)="presentPopover($event, character.items.neck.id)">
+                        <img style="top:50px; left:5px" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.neck.icon }}.jpg"/>
+                    </a>
+                    <a (click)="presentPopover($event, character.items.shoulder.id)">
+                        <img style="top:95px; left:5px" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.shoulder.icon }}.jpg"/>
+                    </a>
+                    <a (click)="presentPopover($event, character.items.back.id)">
+                        <img style="top:140px; left:5px" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.back.icon }}.jpg"/>
+                    </a>
+                    <a (click)="presentPopover($event, character.items.chest.id)">
+                        <img style="top:185px; left:5px" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.chest.icon }}.jpg"/>
+                    </a>
                     <div style="position: relative;">
                         <div style="position: absolute; height:36px; width:36px;top:230px; left:5px;background: url('https://worldofwarcraft.akamaized.net/static/components/GameIcon/GameIcon-slots.png'); background-position-y: 24.8%; background-size: 97%"></div>
                     </div>
                     <div style="position: relative;">
                         <div style="position: absolute; height:36px; width:36px;top:275px; left:5px;background: url('https://worldofwarcraft.akamaized.net/static/components/GameIcon/GameIcon-slots.png'); background-position-y: 30.8%; background-size: 97%"></div>
                     </div>
-                    <img style="top:320px; left:5px" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.wrist.icon }}.jpg"/>
-                    <img style="top:5px; left:89%" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.hands.icon }}.jpg"/>
-                    <img style="top:50px; left:89%" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.waist.icon }}.jpg"/>
-                    <img style="top:95px; left:89%" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.legs.icon }}.jpg"/>
-                    <img style="top:140px; left:89%" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.feet.icon }}.jpg"/>
-                    <img style="top:185px; left:89%" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.finger1.icon }}.jpg"/>
-                    <img style="top:230px; left:89%" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.finger2.icon }}.jpg"/>
-                    <img style="top:275px; left:89%" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.trinket1.icon }}.jpg"/>
-                    <img style="top:320px; left:89%" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.trinket2.icon }}.jpg"/>
-                    <img style="top:320px; left:27%" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.mainHand.icon }}.jpg"/>
-                    <img style="top:320px; left:64%" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.mainHand.icon }}.jpg"/>
+                    <a (click)="presentPopover($event, character.items.wrist.id)">
+                        <img style="top:320px; left:5px" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.wrist.icon }}.jpg"/>
+                    </a>
+                    <a (click)="presentPopover($event, character.items.hands.id)">
+                        <img style="top:5px; left:89%" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.hands.icon }}.jpg"/>
+                    </a>
+                    <a (click)="presentPopover($event, character.items.waist.id)">
+                        <img style="top:50px; left:89%" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.waist.icon }}.jpg"/>
+                    </a>
+                    <a (click)="presentPopover($event, character.items.legs.id)">
+                        <img style="top:95px; left:89%" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.legs.icon }}.jpg"/>
+                    </a>
+                    <a (click)="presentPopover($event, character.items.feet.id)">
+                        <img style="top:140px; left:89%" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.feet.icon }}.jpg"/>
+                    </a>
+                    <a (click)="presentPopover($event, character.items.finger1.id)">
+                        <img style="top:185px; left:89%" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.finger1.icon }}.jpg"/>
+                    </a>
+                    <a (click)="presentPopover($event, character.items.finger2.id)">
+                        <img style="top:230px; left:89%" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.finger2.icon }}.jpg"/>
+                    </a>
+                    <a (click)="presentPopover($event, character.items.trinket1.id)">
+                        <img style="top:275px; left:89%" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.trinket1.icon }}.jpg"/>
+                    </a>
+                    <a (click)="presentPopover($event, character.items.trinket2.id)">
+                        <img style="top:320px; left:89%" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.trinket2.icon }}.jpg"/>
+                    </a>
+                    <a (click)="presentPopover($event, character.items.mainHand.id)">
+                        <img style="top:320px; left:27%" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.mainHand.icon }}.jpg"/>
+                    </a>
+                    <a (click)="presentPopover($event, character.items.mainHand.id)">
+                        <img style="top:320px; left:64%" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.mainHand.icon }}.jpg"/>
+                    </a>
                 </div>
             </div>
 

@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
 import 'rxjs/add/operator/map';
+import {HomePage} from "../home/home";
+import {ItemPage} from "../item/item";
+import { PopoverController } from 'ionic-angular';
 
 /**
  * Generated class for the DashboardPage page.
@@ -24,10 +27,10 @@ export class DashboardPage {
     classe: any;
     classId: {};
     item: any;
+    selectedData:any = {title:"None Selected",id:0};
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public httpClient: HttpClient) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public httpClient: HttpClient, public popoverCtrl: PopoverController) {
     this.credentials = navParams.get('data');
-    // this.item = this.itemPage();
     this.getUsers();
   }
 
@@ -48,7 +51,7 @@ export class DashboardPage {
                     this.classId = classId;
                     this.getClass(classId);
                 },
-                err => console.error(err),
+                err => {alert('Impossible de trouver le personnage'); this.navCtrl.push(HomePage)},
                 () => console.log(this.characters)
             );
   }
@@ -73,9 +76,20 @@ export class DashboardPage {
           );
   }
 
-  // itemPage() {
-  //     console.log(this.item);
-  //     this.navCtrl.push(DashboardPage, {'data': this.item});
-  // }
+  presentPopover(ev, id) {
+
+      let popover = this.popoverCtrl.create(ItemPage, {id});
+
+      popover.present({
+          ev: ev
+      });
+
+      popover.onDidDismiss(data => {
+            console.log(data);
+            if(data!=null){
+                this.selectedData = data
+            }
+        })
+    }
 
 }

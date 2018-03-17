@@ -52,8 +52,15 @@ $colors: (
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
+$text-input-md-highlight-color-invalid: #dedede;
+$text-input-md-highlight-color-valid: #dedede;
+$text-input-md-show-invalid-highlight: #dedede;
+$text-input-md-highlight-color: #dedede;
+$text-input-md-show-valid-highlight: #dedede;
 
-
+.item .item-inner .input-wrapper ion-label{
+  color: #333232;
+}
 
 
 // App Windows Variables
