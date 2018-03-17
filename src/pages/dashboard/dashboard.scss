@@ -1,0 +1,57 @@
+page-dashboard {
+
+}
+.scroll-content {
+  overflow: hidden;
+}
+
+.navbar-logo {
+  width: 30px;
+}
+
+.dashboard-main {
+  background-color: #1A0407 !important;
+}
+
+.gold {
+  color: #F8B55B !important;
+  margin-bottom: 0 !important;
+}
+
+.container {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.container h2, .container p{
+  color: white;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.stat-container {
+  width: 24%;
+  padding: 15px;
+  text-align: center;
+  display: inline-block;
+}
+
+.stat-container img {
+  margin-bottom: 5px;
+}
+
+.stat-container .stat {
+  font-size: 10px;
+}
+
+.green {
+  color: green !important;
+}
+
+.red {
+  color: red !important;
+}
+
+.orange {
+  color: orange !important;
+}

@@ -1,13 +1,14 @@
-<ion-content padding>
-    <ion-item>
-        <ion-label floating>Royaume</ion-label>
-        <ion-input type="text"></ion-input>
-    </ion-item>
-    <ion-item>
-        <ion-label floating>Pseudo</ion-label>
-        <ion-input type="text"></ion-input>
-    </ion-item>
-    <ion-item>
-        <ion-input type="submit"></ion-input>
-    </ion-item>
+<ion-content padding class="login-container">
+    <img src="assets/imgs/logo2.png" class="home-logo" />
+    <form (ngSubmit)="logForm()">
+        <ion-item>
+            <ion-label floating>Royaume</ion-label>
+            <ion-input [(ngModel)]="credentials.realm" name="realm" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Pseudo</ion-label>
+            <ion-input [(ngModel)]="credentials.nickname" name="nickname"  type="text"></ion-input>
+        </ion-item>
+            <button ion-button type="submit" block>Envoyer</button>
+    </form>
 </ion-content>

@@ -1,3 +1,44 @@
-page-home {
+ion-content, .toolbar-background {
+  background-color: #F8B55B !important;
+  color: #333232 !important;
+}
+.toolbar-title, .back-button {
+  color: #333232 !important;
+}
+.login-container {
+  background-color: #F8B55B;
+}
+.item {
+  background: transparent;
+  color: #333232;
+}
 
+.button {
+  color: white;
+  background-color: #333232;
+  margin: 50px auto;
+  width: 80%;
+  border-radius: 0;
+}
+
+.img-character {
+  width:100%;
+  height: 360px;
+  background-position: 49% 67%;
+  background-size: 230%;
+}
+
+.item-ios.item-block .item-inner {
+  border-bottom: 0.55px solid #333232;
+}
+
+.home-logo {
+  margin: 0 auto;
+  display: block;
+  margin-top: 50px;
+}
+
+.img-item img {
+  position: absolute;
+  width: 35px;
 }

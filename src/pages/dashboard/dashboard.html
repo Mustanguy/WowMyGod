@@ -1,0 +1,108 @@
+<!--
+  Generated template for the DashboardPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar hideBackButton="true">
+        <ion-title><img src="assets/imgs/logo2.png" class="navbar-logo" /></ion-title>
+        
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="dashboard-main scroll-content" overflow-scroll="true">
+
+        <div *ngFor="let character of characters">
+            <div class="img-character"
+                 [style.background-image]="'url(https://render-eu.worldofwarcraft.com/character/' + img + ')'">
+                <div class="img-item">
+                    <a (ng-click)="itemPage(character.item.head.id)">
+                        <img style="top:5px; left:5px" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.head.icon }}.jpg"/>
+                    </a>
+                    <img style="top:50px; left:5px" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.neck.icon }}.jpg"/>
+                    <img style="top:95px; left:5px" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.shoulder.icon }}.jpg"/>
+                    <img style="top:140px; left:5px" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.back.icon }}.jpg"/>
+                    <img style="top:185px; left:5px" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.chest.icon }}.jpg"/>
+                    <div style="position: relative;">
+                        <div style="position: absolute; height:36px; width:36px;top:230px; left:5px;background: url('https://worldofwarcraft.akamaized.net/static/components/GameIcon/GameIcon-slots.png'); background-position-y: 24.8%; background-size: 97%"></div>
+                    </div>
+                    <div style="position: relative;">
+                        <div style="position: absolute; height:36px; width:36px;top:275px; left:5px;background: url('https://worldofwarcraft.akamaized.net/static/components/GameIcon/GameIcon-slots.png'); background-position-y: 30.8%; background-size: 97%"></div>
+                    </div>
+                    <img style="top:320px; left:5px" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.wrist.icon }}.jpg"/>
+                    <img style="top:5px; left:89%" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.hands.icon }}.jpg"/>
+                    <img style="top:50px; left:89%" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.waist.icon }}.jpg"/>
+                    <img style="top:95px; left:89%" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.legs.icon }}.jpg"/>
+                    <img style="top:140px; left:89%" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.feet.icon }}.jpg"/>
+                    <img style="top:185px; left:89%" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.finger1.icon }}.jpg"/>
+                    <img style="top:230px; left:89%" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.finger2.icon }}.jpg"/>
+                    <img style="top:275px; left:89%" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.trinket1.icon }}.jpg"/>
+                    <img style="top:320px; left:89%" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.trinket2.icon }}.jpg"/>
+                    <img style="top:320px; left:27%" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.mainHand.icon }}.jpg"/>
+                    <img style="top:320px; left:64%" src="https://render-eu.worldofwarcraft.com/icons/56/{{ character.items.mainHand.icon }}.jpg"/>
+                </div>
+            </div>
+
+            <div class="container" style="margin-bottom: 25px">
+
+                <img src="assets/imgs/{{character.faction}}.png" style="position: absolute;width: 140px;right: 28px;top: 402px;"/>
+                <p class="gold" style="margin-top: 15px !important;">{{ character.titles[0].name }}</p>
+                <h2>{{character.name}}</h2>
+                <p style="">{{ classe }} {{ character.talents[0].spec.name }} - Niveau {{ character.level }}</p>
+                <p class="gold">< Guilde ></p>
+
+                <div class="stat-container">
+                    <img src="assets/imgs/heart.png" />
+                    <p class="green">{{ character.stats.health }}</p>
+                    <p class="stat">Vie</p>
+                </div>
+
+                <div class="stat-container">
+                    <img src="assets/imgs/angry.png" />
+                    <p class="red">{{ character.stats.power }}</p>
+                    <p class="stat">Rage</p>
+                </div>
+
+                <div class="stat-container">
+                    <img src="assets/imgs/strengh.png" />
+                    <p class="red">{{ character.stats.str }}</p>
+                    <p class="stat">Force</p>
+                </div>
+
+                <div class="stat-container">
+                    <img src="assets/imgs/medical-kit.png" />
+                    <p class="orange">{{ character.stats.sta }}</p>
+                    <p class="stat">Endurance</p>
+                </div>
+
+                <div class="stat-container">
+                    <img src="assets/imgs/target.png" />
+                    <p class="orange">{{ "" + character.stats.crit + "" | slice:0:2 }} %</p>
+                    <p class="stat">Critique</p>
+                </div>
+
+                <div class="stat-container">
+                    <img src="assets/imgs/time.png" />
+                    <p class="orange">{{ "" + character.stats.haste + "" | slice:0:2 }} %</p>
+                    <p class="stat">Hate</p>
+                </div>
+
+                <div class="stat-container">
+                    <img src="assets/imgs/crown.png" />
+                    <p class="orange">{{ "" + character.stats.mastery + "" | slice:0:2 }} %</p>
+                    <p class="stat">Maitrise</p>
+                </div>
+
+                <div class="stat-container">
+                    <img src="assets/imgs/tools.png" />
+                    <p class="orange">{{ "" + character.stats.versatilityDamageDoneBonus + "" | slice:0:1 }} %</p>
+                    <p class="stat">Polyvalence</p>
+                </div>
+            </div>
+        </div>
+</ion-content>
+
