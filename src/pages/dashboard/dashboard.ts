@@ -5,6 +5,7 @@ import 'rxjs/add/operator/map';
 import {HomePage} from "../home/home";
 import {ItemPage} from "../item/item";
 import { PopoverController } from 'ionic-angular';
+import {MenuPage} from "../menu/menu";
 
 /**
  * Generated class for the DashboardPage page.
@@ -90,6 +91,10 @@ export class DashboardPage {
                 this.selectedData = data
             }
         })
+    }
+
+    doClick() {
+        this.navCtrl.push(MenuPage, {}, {animate:true,animation:'transition',duration:500,direction:'forward'});
     }
 
 }

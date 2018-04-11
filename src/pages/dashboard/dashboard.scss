@@ -4,7 +4,7 @@ page-dashboard {
 
 .navbar-logo {
   width: 30px;
-  margin: 0 auto;
+  margin-left: 100px;
   display: block;
 }
 
@@ -15,6 +15,7 @@ page-dashboard {
 .gold {
   color: #F8B55B !important;
   margin-bottom: 0 !important;
+
 }
 
 .container {
@@ -62,7 +63,7 @@ page-dashboard {
 }
 
 .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
-  position: absolute;
+  //position: absolute;
   z-index: 99999;
 }
 
@@ -79,4 +80,8 @@ page-dashboard {
   left: 71px !important;
   top: 61px !important;
   box-shadow: none;
+}
+
+ion-icon {
+  font-size: 1.8em;
 }

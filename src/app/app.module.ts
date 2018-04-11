@@ -9,25 +9,36 @@ import { HomePage } from '../pages/home/home';
 import { DashboardPage } from '../pages/dashboard/dashboard';
 import { ItemPage } from '../pages/item/item';
 import { HttpClientModule } from '@angular/common/http';
+import { MenuPage } from "../pages/menu/menu";
+import { IonicStorageModule } from '@ionic/storage';
+import {ChoixPage} from "../pages/choix/choix";
+import {HautfaitPage} from "../pages/hautfait/hautfait";
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     DashboardPage,
-    ItemPage
+    ItemPage,
+    MenuPage,
+    ChoixPage,
+    HautfaitPage
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
     DashboardPage,
-    ItemPage
+    ItemPage,
+    MenuPage,
+    ChoixPage,
+    HautfaitPage
   ],
   providers: [
     StatusBar,

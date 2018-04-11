@@ -8,6 +8,11 @@
 
     <ion-navbar>
         <ion-title><img src="assets/imgs/logo2.png" class="navbar-logo" /></ion-title>
+        <ion-buttons end>
+            <button ion-button (click)="doClick()">
+                <ion-icon name="menu"></ion-icon>
+            </button>
+        </ion-buttons>
     </ion-navbar>
 
 </ion-header>
@@ -82,7 +87,7 @@
                 <p class="gold" style="margin-top: 15px !important;">{{ character.titles[0].name }}</p>
                 <h2>{{character.name}}</h2>
                 <p style="">{{ classe }} {{ character.talents[0].spec.name }} - Niveau {{ character.level }}</p>
-                <p class="gold">< Guilde ></p>
+                <p class="gold">< Les boutes-en-train ></p>
 
                 <div class="stat-container">
                     <img src="assets/imgs/heart.png" />
