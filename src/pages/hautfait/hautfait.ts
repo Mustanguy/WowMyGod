@@ -20,6 +20,11 @@ export class HautfaitPage {
 
 
     characters: any=[];
+    achievements: any=[];
+    achievement: any=[];
+    qty: any;
+    characterAchievement: any=[];
+    characterAchievementData: any=[];
     constructor(public navCtrl: NavController, public navParams: NavParams, public httpClient: HttpClient,  private storage: Storage) {
       this.getHautFaits();
   }
@@ -31,12 +36,20 @@ export class HautfaitPage {
                 this.httpClient.get('https://eu.api.battle.net/wow/character/'+ val + '/'  + val2 + '?fields=achievements&locale=fr_FR&apikey=e4ynx3aazz7gx3vc4a835x9h9bx2xvnn')
                     .subscribe(
                         data => {
-                            console.log(data);
                             this.characters = data;
-                            // this.characters = Array.of(this.characters);
-                            this.resultArray = this.characters.map(function(a) {return a["_id"];});
-                            this.characters['achievements']['achievementsCompleted'].forEach(function(value, key) {
-                               console.log(value);
+                            this.characters = Array.of(this.characters);
+                            let achievements = [];
+                            this.characters.forEach(function(value, key) {
+                                achievements = value.achievements.achievementsCompleted;
+                            });
+                            this.achievements = achievements;
+                            this.qty = 0;
+                            this.achievements.reverse();
+                            this.achievements.forEach((value) => {
+                                if(this.qty < 100) {
+                                    this.achievement = this.getAchievement(value);
+                                }
+                                this.qty += 1;
                             });
 
                         },
@@ -52,11 +65,12 @@ export class HautfaitPage {
     }
 
     ngOnInit() { console.log('test'); }
+
     getAchievement(achievementId) {
         this.httpClient.get('https://eu.api.battle.net/wow/achievement/'+ achievementId + '?&locale=fr_FR&apikey=e4ynx3aazz7gx3vc4a835x9h9bx2xvnn')
             .subscribe(
                 data => {
-                    console.log(data);
+                    this.characterAchievement.push(data);
                 },
                 err => {},
                 () => console.log()

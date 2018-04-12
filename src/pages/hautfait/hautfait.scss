@@ -1,3 +1,65 @@
 page-hautfait {
 
 }
+.hautfait {
+  padding-left: 15px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.img-hautfait {
+  width: 46px;
+  height: 46px;
+  display: inline-block;
+  position: absolute;
+}
+.description-hautfait {
+  display: inline-block;
+  margin-top: 2px;
+}
+
+.description-hautfait p {
+  margin-left: 65px;
+  max-width: 220px;
+}
+.img-point-hautfait {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  margin-top: 3px;
+}
+.hautfait:nth-child(odd) {
+  background-color: #F6CB92;
+  .img-hautfait {
+    background: url('../../assets/imgs/hautfait1.png');
+  }
+  .img-point-hautfait {
+    background: url('../../assets/imgs/point1.png');
+  }
+}
+.hautfait:nth-child(even) {
+  background-color: #F9C176;
+  .img-hautfait {
+    background: url('../../assets/imgs/hautfait2.png');
+  }
+  .img-point-hautfait {
+    background: url('../../assets/imgs/point2.png');
+  }
+}
+
+.point-hautfait {
+  display: inline-block;
+  float: right;
+  padding-right: 15px;
+
+  p {
+    display: inline-block;
+  }
+}
+.achievement-icon {
+  color: #f8b700;
+}
+.achievement-shield {
+  width: 18px;
+  height: 18px;
+}
+

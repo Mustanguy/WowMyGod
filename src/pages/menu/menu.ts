@@ -4,6 +4,7 @@ import { Storage } from '@ionic/storage';
 import {DashboardPage} from "../dashboard/dashboard";
 import {ChoixPage} from "../choix/choix";
 import {HautfaitPage} from "../hautfait/hautfait";
+import {TalentsPage} from "../talents/talents";
 
 /**
  * Generated class for the MenuPage page.
@@ -42,6 +43,10 @@ export class MenuPage {
 
     goHautFait() {
         this.navCtrl.push(HautfaitPage);
+    }
+
+    goTalents() {
+        this.navCtrl.push(TalentsPage);
     }
 
 }

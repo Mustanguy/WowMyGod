@@ -1,0 +1,21 @@
+page-talents {
+}
+.talents {
+  padding: 20px;
+  margin: 0;
+}
+
+.talents:first-of-type {
+  display: none;
+}
+
+.talents:nth-child(odd) {
+  background-color: #F6CB92;
+}
+.talents:nth-child(even) {
+  background-color: #F9C176;
+}
+
+.choice-talents {
+  margin-bottom: -4px;
+}

@@ -13,6 +13,7 @@ import { MenuPage } from "../pages/menu/menu";
 import { IonicStorageModule } from '@ionic/storage';
 import {ChoixPage} from "../pages/choix/choix";
 import {HautfaitPage} from "../pages/hautfait/hautfait";
+import {TalentsPage} from "../pages/talents/talents";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {HautfaitPage} from "../pages/hautfait/hautfait";
     ItemPage,
     MenuPage,
     ChoixPage,
-    HautfaitPage
+    HautfaitPage,
+    TalentsPage
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,8 @@ import {HautfaitPage} from "../pages/hautfait/hautfait";
     ItemPage,
     MenuPage,
     ChoixPage,
-    HautfaitPage
+    HautfaitPage,
+    TalentsPage,
   ],
   providers: [
     StatusBar,
