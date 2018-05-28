@@ -20,15 +20,69 @@
 
 <ion-content>
   <h3>Talents</h3>
-  <img src="assets/imgs/talent.png" class="choice-talents"/>
-  <div class="talents" *ngFor="let talent of talents">
-    <table>
-      <tr>
-        <td>
-          <img src="https://render-eu.worldofwarcraft.com/icons/56/{{talent.spell.icon}}.jpg"/>
-        </td>
-        <td style="padding-left: 15px">{{talent.spell.name}}</td>
-      </tr>
-    </table>
+  <div class="choose-talent">
+    <div *ngFor="let arme of armes" (click)="selectArmes()" class="item-talent">
+      <div [ngStyle]="selected != 'armes' && {'opacity': '0.4'}">
+        <img  src="https://render-eu.worldofwarcraft.com/icons/56/{{arme.spec.icon}}.jpg"/>
+        <p>{{arme.spec.name}}</p>
+      </div>
+    </div>
+    <div *ngFor="let fureur of fureurs" (click)="selectFureur()" class="item-talent">
+      <div [ngStyle]="selected != 'fureur' && {'opacity': '0.4'}">
+        <img  src="https://render-eu.worldofwarcraft.com/icons/56/{{fureur.spec.icon}}.jpg"/>
+        <p>{{fureur.spec.name}}</p>
+      </div>
+    </div>
+    <div *ngFor="let protection of protections" (click)="selectProtection()" class="item-talent">
+      <div [ngStyle]="selected != 'protection' && {'opacity': '0.4'}">
+        <img *ngFor="let protection of protections" src="https://render-eu.worldofwarcraft.com/icons/56/{{protection.spec.icon}}.jpg"/>
+        <p>{{protection.spec.name}}</p>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="selected == 'fureur'">
+    <div  *ngFor="let fureurTab of fureurs">
+      <div class="talents" *ngFor="let fureur of fureurTab.talents; let i = index" [attr.data-index]="i" [ngSwitch]="i">
+        <table>
+          <tr>
+            <td>
+              <h4 *ngSwitchCase="1">15</h4>
+            </td>
+            <td>
+              <img src="https://render-eu.worldofwarcraft.com/icons/56/{{fureur.spell.icon}}.jpg"/>
+            </td>
+            <td style="padding-left: 15px">{{fureur.spell.name}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="selected == 'armes'">
+    <div  *ngFor="let armesTab of armes">
+      <div class="talents" *ngFor="let arme of armesTab.talents; ">
+        <table>
+          <tr>
+            <td>
+              <img src="https://render-eu.worldofwarcraft.com/icons/56/{{arme.spell.icon}}.jpg"/>
+            </td>
+            <td style="padding-left: 15px">{{arme.spell.name}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="selected == 'protection'">
+    <div *ngFor="let protectionTab of protections">
+      <div class="talents" *ngFor="let protection of protectionTab.talents">
+        <table>
+          <tr>
+            <td>
+              <img src="https://render-eu.worldofwarcraft.com/icons/56/{{protection.spell.icon}}.jpg"/>
+            </td>
+            <td style="padding-left: 15px">{{protection.spell.name}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
   </div>
 </ion-content>
