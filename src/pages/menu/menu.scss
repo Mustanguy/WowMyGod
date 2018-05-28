@@ -1,5 +1,5 @@
 .menu-content a{
-  color: #000000;
+  color: #ffffff;
   width: 100%;
   display: block;
   font-size: 20px;
@@ -8,4 +8,8 @@
   border-bottom: 1px solid black;
   padding-bottom: 15px;
   padding-top: 15px;
+}
+
+.menu-content {
+  background-color: #1A0407 !important;
 }

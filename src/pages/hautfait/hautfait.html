@@ -6,8 +6,8 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title><img src="assets/imgs/logo2.png" class="navbar-logo" /></ion-title>
+  <ion-navbar hideBackButton>
+    <ion-title>Haut faits</ion-title>
     <ion-buttons end>
       <button ion-button (click)="doClick()">
         <ion-icon name="menu"></ion-icon>
@@ -19,7 +19,6 @@
 
 
 <ion-content>
-  <h3>Haut Faits</h3>
   <div *ngFor="let achievement of characterAchievement" class="hautfait">
    <table>
      <tr>

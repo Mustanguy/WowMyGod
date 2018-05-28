@@ -19,7 +19,6 @@
 
 
 <ion-content>
-  <h3>Talents</h3>
   <div class="choose-talent">
     <div *ngFor="let arme of armes" (click)="selectArmes()" class="item-talent">
       <div [ngStyle]="selected != 'armes' && {'opacity': '0.4'}">
@@ -47,6 +46,11 @@
           <tr>
             <td>
               <h4 *ngSwitchCase="1">15</h4>
+              <h4 *ngSwitchCase="2">30</h4>
+              <h4 *ngSwitchCase="3">45</h4>
+              <h4 *ngSwitchCase="4">60</h4>
+              <h4 *ngSwitchCase="5">75</h4>
+              <h4 *ngSwitchCase="6">90</h4>
             </td>
             <td>
               <img src="https://render-eu.worldofwarcraft.com/icons/56/{{fureur.spell.icon}}.jpg"/>
@@ -59,9 +63,17 @@
   </div>
   <div *ngIf="selected == 'armes'">
     <div  *ngFor="let armesTab of armes">
-      <div class="talents" *ngFor="let arme of armesTab.talents; ">
+      <div class="talents" *ngFor="let arme of armesTab.talents; let i = index" [attr.data-index]="i" [ngSwitch]="i">
         <table>
           <tr>
+            <td>
+              <h4 *ngSwitchCase="1">15</h4>
+              <h4 *ngSwitchCase="2">30</h4>
+              <h4 *ngSwitchCase="3">45</h4>
+              <h4 *ngSwitchCase="4">60</h4>
+              <h4 *ngSwitchCase="5">75</h4>
+              <h4 *ngSwitchCase="6">90</h4>
+            </td>
             <td>
               <img src="https://render-eu.worldofwarcraft.com/icons/56/{{arme.spell.icon}}.jpg"/>
             </td>
@@ -73,9 +85,17 @@
   </div>
   <div *ngIf="selected == 'protection'">
     <div *ngFor="let protectionTab of protections">
-      <div class="talents" *ngFor="let protection of protectionTab.talents">
+      <div class="talents" *ngFor="let protection of protectionTab.talents; let i = index" [attr.data-index]="i" [ngSwitch]="i">
         <table>
           <tr>
+            <td>
+              <h4 *ngSwitchCase="1">15</h4>
+              <h4 *ngSwitchCase="2">30</h4>
+              <h4 *ngSwitchCase="3">45</h4>
+              <h4 *ngSwitchCase="4">60</h4>
+              <h4 *ngSwitchCase="5">75</h4>
+              <h4 *ngSwitchCase="6">90</h4>
+            </td>
             <td>
               <img src="https://render-eu.worldofwarcraft.com/icons/56/{{protection.spell.icon}}.jpg"/>
             </td>
