@@ -18,8 +18,11 @@ import {HttpClient} from "@angular/common/http";
 })
 export class TalentsPage {
 
-  talents: any=[];
   talentsTab: any=[];
+  fureurs: any=[];
+  armes: any=[];
+  protections: any=[];
+  selected: string;
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, public httpClient: HttpClient) {
     this.getTalents()
   }
@@ -29,7 +32,7 @@ export class TalentsPage {
     }
 
     getTalents() {
-
+        this.selected = 'fureur';
         this.storage.get('realm').then((val) => {
             this.storage.get('nickname').then((val2) => {
                 this.httpClient.get('https://eu.api.battle.net/wow/character/'+ val + '/'  + val2 + '?fields=talents&locale=fr_FR&apikey=e4ynx3aazz7gx3vc4a835x9h9bx2xvnn')
@@ -38,8 +41,13 @@ export class TalentsPage {
                             this.talentsTab = data;
                             this.talentsTab = Array.of(this.talentsTab);
                             this.talentsTab.forEach((value) => {
-                                this.talents = value.talents[0].talents;
-                                console.log(this.talents);
+                                this.fureurs = value.talents[0];
+                                this.fureurs = Array.of(this.fureurs);
+                                this.armes = value.talents[1];
+                                this.armes = Array.of(this.armes);
+                                this.protections = value.talents[2];
+                                this.protections = Array.of(this.protections);
+                                console.log(this.fureurs);
                             });
 
                         },
@@ -49,5 +57,17 @@ export class TalentsPage {
             });
         });
 
+    }
+
+    selectArmes() {
+      this.selected = 'armes'
+    }
+
+    selectProtection() {
+        this.selected = 'protection'
+    }
+
+    selectFureur() {
+        this.selected = 'fureur'
     }
 }

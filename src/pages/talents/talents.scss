@@ -16,6 +16,26 @@ page-talents {
   background-color: #F9C176;
 }
 
-.choice-talents {
-  margin-bottom: -4px;
+.choose-talent {
+  background-color: #1A0407;
+  width: 100%;
+  height:120px;
+  color: white;
+  text-align: center;
+}
+.item-talent {
+  display: inline-block;
+  padding:15px;
+}
+
+.item-talent p {
+  margin-top: 2px;
+}
+
+.talent-opacity {
+  opacity: 0.4;
+}
+
+.talents h4 {
+  margin-right: 20px;
 }
